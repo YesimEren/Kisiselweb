@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table border="1">
+    <tr>
+        <td> Id</td>
+        <td>İsim</td>
+        <td>Güncelle</td>
+
+    </tr>
+
+    @foreach (var x in Model)
+    { @* Verileri veritabanından böyle çekiyporuz. *@
+        <tr>
+            <td>@x.id</td>
+            <td>@x.Name</td>
+            <td><a href="/Admin/AnasayfaGetir/@x.id" class="btn bg-primary">Güncelle</a></td>
+        </tr>
+    }
+
+
+
+</table>
+

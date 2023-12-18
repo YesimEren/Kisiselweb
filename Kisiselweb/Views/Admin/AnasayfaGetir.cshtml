@@ -1,0 +1,40 @@
+﻿@model Kisiselweb.Models.Classes.Anasayfa
+@{
+    ViewData["Title"] = "AnasayfaGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mt-4">Anasayfa Güncelle</h2>
+<hr />
+
+@using (Html.BeginForm("AnasayfaGüncelle","Admin",FormMethod.Post)) //Buradaki Admin yazısı Controllerın ismi.Adminin yani.
+{
+    @Html.LabelFor(x => x.id) //id,profil,unvan kısmını çekti.
+     
+    @Html.TextBoxFor(x => x.id, new { @class = "form-control", @readonly = "readonly"})   //id yazsıının altındak, verileri çekti,readonly değiştirilemez demek.
+    <br />
+    
+    @Html.LabelFor(x =>x.Name)
+    @Html.TextBoxFor(x =>x.Name,new { @class="form-control"})
+    <br />
+
+    @Html.LabelFor(x =>x.Unvan)
+    @Html.TextBoxFor(x =>x.Unvan,new { @class="form-control"}) 
+    <br />
+
+    @Html.LabelFor(x =>x.Comminication)
+    @Html.TextBoxFor(x =>x.Comminication,new { @class="form-control"})
+    <br />
+
+    @Html.LabelFor(x =>x.Description)
+    @Html.TextAreaFor(x =>x.Description,new { @class="form-control"})
+    <br />
+
+    @Html.LabelFor(x =>x.Profiphoto)
+    @Html.TextAreaFor(x =>x.Profiphoto,new { @class="form-control"})
+    <br />
+
+    <button class=" btn btn-success">Anasayfayı Güncelle</button>
+}
+
+
